@@ -1,0 +1,971 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+.wrapper
+  margin: 0 auto
+  max-width: 1360px
+  padding: 0 30px
+
+@media screen and (max-width: 768px)
+  .wrapper
+    padding: 0 20px
+
+.burger
+  display: none
+  gap: 13px
+  position: relative
+  p
+    margin: 0
+    color: #FFF
+    font-family: Outfit
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 120%
+  img
+    cursor: pointer
+  ul
+    z-index: 3
+    margin: 0
+    padding: 24px 0 22px
+    left: -26px
+    top: 37px
+    background-color: #1C1C1C
+    display: flex
+    flex-direction: column
+    gap: 16px
+    width: 335px
+    list-style: none
+    position: absolute
+    li
+      padding-top: 16px
+      padding-bottom: 18px
+      padding-left: 56px
+      color: #9C9C9C
+      font-family: Outfit
+      font-size: 18px !important
+      font-style: normal
+      font-weight: 500
+      line-height: 120%
+
+.burger_active
+  display: flex !important
+
+
+.active-li
+  color: #FFF !important
+  background-color: #ED2024
+
+.header
+  margin-top: 37px
+  width: 100%
+
+
+
+.header_top
+  display: flex
+  justify-content: space-between
+  align-items: center
+  p
+    color: #262626
+    text-align: center
+    font-family: Outfit
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+    span
+      color: #AAA
+
+.contact-block
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  gap: 9px
+  span
+    img
+      padding-right: 14px
+    a
+      text-decoration: none
+      color: #262626
+
+.search-input_close-icon
+  position: absolute
+  width: 20px
+  height: 20px
+  top: 6px
+  display: none
+  right: 0
+
+.active_close-icon
+  display: block
+
+.header_nav-bar
+  position: relative
+  margin-top: 23px
+  display: flex
+  justify-content: space-between
+  padding: 13px 13px 0 26px
+  background-color: #262626
+  a
+    cursor: pointer
+    text-decoration: none
+    padding-bottom: 15px
+    color: #9C9C9C
+    font-family: Outfit
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 120%
+  nav
+    display: flex
+    gap: 34px
+  form
+    display: flex
+    flex-direction: row
+    transform: translateY(-2px)
+    max-height: 24px
+    div
+      display: none
+      padding: 7px 8px 7px
+      z-index: 9999999
+      top: 50px
+      position: absolute
+      width: 105%
+      background-color: rgba(255, 255, 255, 1)
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
+      span
+        h2
+          margin-bottom: 5px
+          color: #262626
+          font-family: Outfit
+          font-size: 16px
+          font-style: normal
+          font-weight: 400
+          line-height: 120%
+        p
+          color: #AAA
+          font-family: Outfit
+          font-size: 16px
+          font-style: normal
+          font-weight: 400
+          line-height: 120%
+
+    input
+      color: #9C9C9C
+      font-family: Outfit
+      font-size: 18px
+      font-style: normal
+      font-weight: 400
+      line-height: 120%
+      padding: 0
+      max-height: 22px
+      background-color: transparent
+      border: none
+      max-width: 56px
+    input:focus
+      transform: translateY(-11px)
+      min-height: 55px
+      min-width: 250px
+      border: 2px solid #AAA
+      background: #FFF
+      max-width: 100px
+      margin-right: -12px
+      padding-right: 40px
+    input:focus::placeholder
+      color: transparent
+    button
+      padding: 0
+      padding-left: 13px
+      cursor: pointer
+      max-height: 24px
+      background-color: transparent
+      border: none
+
+.active-link
+  padding-bottom: 11px
+  border-bottom: 6px solid #ED2024
+
+@media screen and (max-width: 1258px)
+  .header_nav-bar
+    a
+      font-size: 14px
+    form
+      input:focus
+        min-height: 50px
+
+
+@media screen and (max-width: 1109px)
+  .header_nav-bar
+    a
+      font-size: 11px
+    form
+      input:focus
+        min-height: 46px
+
+
+@media screen and (max-width: 999px)
+  .burger
+    display: flex
+    ul
+      display: none
+  .header_nav-bar
+    padding: 13px 13px 13px 26px
+    nav
+      display: none
+    form
+      z-index: 99
+      display: flex
+      justify-content: flex-end
+      width: 100%
+      div
+        max-width: 100%
+        transform: translateX(10px)
+      input:focus
+        min-height: 50px
+        padding-bottom: 23px
+        padding-top: 25px
+        padding-left: 23px
+        max-width: none
+        width: 100%
+
+
+@media screen and (max-width: 888px)
+  .img-href
+    display: block !important
+  .header_top
+    p
+      display: none
+
+
+@media screen and (max-width: 768px)
+  .contact-block
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    gap: 10px
+    span
+      img
+        padding-right: 0
+      a
+        display: none
+
+@media screen and (max-width: 480px)
+  .header_logo
+    width: 214px
+
+  .header_nav-bar
+    position: relative
+  .burger
+    position: static
+    ul
+      left: 0
+      top: 50px
+      width: 100%
+
+.main
+  width: 100%
+  background-color: #F5F5F5
+  overflow: scroll
+  padding-top: 100px
+  padding-bottom: 50px
+.table
+  width: 1300px
+  margin: 0 auto
+
+.second-heading
+  display: flex
+  flex-direction: column
+  gap: 22px
+  transform: translateY(-50px)
+td
+  width: 250px
+  padding: 15px 0 16px 20px
+  color: #6C6C6C
+  font-family: Outfit
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 120%
+
+th
+  max-width: 171px
+  padding-left: 20px
+  padding-top: 19px
+  padding-bottom: 20px
+  width: 264px
+  color: #000
+  font-family: Outfit
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 120%
+
+tr
+  background-color: #FFF
+  button
+    width: 150px
+    height: 40px
+    border: none
+    color: #FFF
+    text-align: center
+    font-family: Outfit
+    font-size: 16px
+    font-style: normal
+    font-weight: 700
+    line-height: 120%
+    background-color: #262626
+
+tr:nth-child(2n)
+  opacity: 0.5
+
+.broker
+  color: #000
+  font-family: Outfit
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 120%
+.table-heading
+  background: #F5F5F5
+  border-bottom: 4px solid #ED2024
+  th
+    max-height: 30px
+    padding-top: 0
+    padding-bottom: 21px
+.bottom-image
+  max-width: 102px
+  max-height: 30px
+
+.description
+  border-left: 4px solid #ED2024
+  background-color: #F5F5F5
+  padding: 0 110px 50px
+  margin-top: 100px
+  display: flex
+  flex-direction: column
+  gap: 30px
+  span
+    background-color: #FFF
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 200px
+    height: 200px
+  h2
+    color: #262626
+    font-family: Outfit
+    font-size: 36px
+    font-style: normal
+    font-weight: 700
+    line-height: 120%
+  p
+    color: #262626
+    font-family: Outfit
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+.description-image
+  width: 150px
+  height: 44px
+
+@media screen and (max-width: 768px)
+  .description
+    padding: 0 40px 35px
+
+@media screen and (max-width: 480px)
+  .description
+    padding: 0 20px 15px
+
+@media screen and (max-width: 430px)
+  .description
+    margin-top: 50px
+    gap: 18px
+    h2
+      font-size: 24px
+    p
+      font-size: 15px
+
+
+
+@media screen and (max-width: 375px)
+  .description
+    padding: 0 20px 15px
+
+.description2
+  margin-top: 50px
+
+@media screen and (max-width: 430px)
+  .description2
+    margin-top: 25px
+
+.contact-us
+  max-width: 1300px
+  margin: 100px auto
+  display: flex
+  flex-direction: column
+  background-size: cover
+  background-repeat: no-repeat
+  background-image: url("/images/src/background.jpg")
+  padding: 50px 75px 60px
+  width: 100%
+  button
+    background-color: #262626
+    border: none
+    width: 176px
+    height: 50px
+    margin: 60px auto
+    color: #FFF
+    text-align: center
+    font-family: Outfit
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 120%
+
+.t-2
+  display: none
+
+.contact-us_text
+  margin: 0 auto
+  h2
+    color: #ED2024
+    text-align: center
+    font-family: Outfit
+    font-size: 36px
+    font-style: normal
+    font-weight: 700
+    line-height: 120%
+  p
+    color: #262626
+    text-align: center
+    font-family: Outfit
+    font-size: 20px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+    padding-top: 40px
+.contact-us_images
+  margin-top: 36px
+  display: flex
+  flex-direction: row
+  gap: 50px
+  span
+    display: flex
+    gap: 20px
+    h2
+      align-self: center
+      color: #262626
+      font-family: Outfit
+      font-size: 24px
+      font-style: normal
+      font-weight: 700
+      line-height: 120%
+
+@media screen and (max-width: 1299px)
+  .contact-us_images
+    span
+      h2
+        font-size: 20px
+
+@media screen and (max-width: 1299px)
+  .contact-us
+    padding: 50px 50px 60px
+
+@media screen and (max-width: 1198px)
+  .contact-us_images
+    span
+      h2
+        font-size: 16px
+
+@media screen and (max-width: 1099px)
+  .contact-us
+    padding: 50px 35px 60px
+  .contact-us_images
+    align-self: center
+    gap: 30px
+
+
+
+@media screen and (max-width: 1099px)
+  .contact-us_images
+    align-self: center
+    gap: 30px
+    span
+      h2
+        font-size: 12px
+
+@media screen and (max-width: 1099px)
+  .contact-us_images
+    display: none
+
+@media screen and (max-width: 768px)
+  .contact-us
+    margin-top: 50px
+    button
+      margin-top: 30px
+  .contact-us_text
+    p
+      padding-top: 20px
+      display: none
+    h2
+      display: none
+  .t-2
+    display: block !important
+
+@media screen and (max-width: 480px)
+  .t-2
+    font-size: 24px !important
+  .t-2p
+    font-size: 16px !important
+
+
+@media screen and (max-width: 400px)
+  .contact-us
+    padding: 50px 20px
+
+.footer
+  padding-top: 50px
+  background-color: #262626
+  margin-top: 100px
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+.nav-block
+  padding: 0 30px
+  padding-bottom: 50px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  gap: 100px
+  width: 100%
+  max-width: 1300px
+  nav
+    h2
+      color: #9C9C9C
+      font-family: Outfit
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 120%
+
+.footer_link
+  list-style: none
+  text-decoration: none
+  padding: 0
+  a
+    cursor: pointer
+    color: #FFF
+    font-family: Outfit
+    font-size: 14px
+    font-style: normal
+    font-weight: 500
+    line-height: 160%
+    text-decoration: none
+    list-style: none
+
+.footer_links
+  padding: 0
+
+.footer_contacts
+  display: flex !important
+  white-space: nowrap
+  color: #FFF !important
+  font-family: Outfit !important
+  font-size: 16px !important
+  font-style: normal !important
+  font-weight: 400 !important
+  line-height: 120% !important
+
+.footer_contacts-container
+  display: flex
+  flex-wrap: nowrap !important
+
+.copyright-block
+  width: 100%
+  max-width: 1300px
+  border-top: 4px solid #454545
+  img
+    padding: 40px 0 40px
+
+
+
+@media screen and (max-width: 1064px)
+  .nav-block
+    gap: 60px
+
+@media screen and (max-width: 999px)
+  .footer
+    padding: 50px 30px 0
+  .nav-block
+    padding: 0 0 50px
+    gap: 50px
+    flex-direction: column
+
+@media screen and (max-width: 768px)
+  .contact-us
+    margin-bottom: 0
+
+  .footer
+    margin-top: 0
+  .footer_contact_block
+    display: flex
+    flex-direction: column
+  .footer_svg
+    padding-right: 14px !important
+
+@media screen and (max-width: 480px)
+  .footer
+    padding: 50px 20px 0
+
+.popup_reg
+  overflow: scroll
+  display: none
+  transform: translateY(-100px)
+  background: rgba(0,0,0,.7)
+  width: 100%
+  height: 120%
+  z-index: 999
+  position: fixed
+  color: #F5F5F5
+  form
+    padding: 70px 40px 70px
+    position: relative
+    margin: 100px auto
+    background-color: #F5F5F5
+    width: 600px
+    height: 900px
+    button
+      border: none
+      width: 176px
+      height: 60px
+      color: #FFF
+      background-color: #ED2024
+      text-align: center
+      font-family: Outfit
+      font-size: 18px
+      font-style: normal
+      font-weight: 700
+      line-height: 120%
+    h2
+      color: #262626
+      text-align: center
+      font-family: Outfit
+      font-size: 24px
+      font-style: normal
+      font-weight: 700
+      line-height: 120%
+      margin-bottom: 60px
+    div
+      display: flex
+      flex-direction: row
+      flex-wrap: nowrap
+      justify-content: space-between
+      margin-bottom: 25px
+    img
+      top: 0
+      position: absolute
+      right: 0
+    span
+      display: flex
+      flex-direction: column
+      label
+        color: #262626
+        font-family: Outfit
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 120%
+        display: inline-flex
+        align-items: center
+        cursor: pointer
+      label
+        input[type='checkbox']:checked + .checkbox-custom :before
+          content: ""
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 12px
+          height: 12px
+          background-color: red
+          border-radius: 50%
+      p
+        margin-bottom: 5px
+        color: #6C6C6C
+        font-family: Outfit
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 120%
+      input
+        width: 250px
+        max-height: 50px
+        padding: 12px 0 12px 16px
+        border: none
+        border-bottom: 2px solid #262626
+        background-color: #FFF
+      select
+        width: 100%
+        padding: 12px 0 12px 16px
+        border: none
+        border-bottom: 2px solid #262626
+        background-color: #FFF
+
+.country-select
+  min-width: 100%
+  span
+    width: 100% !important
+
+.country-select-input
+  margin: 0 !important
+  display: none
+  width: 100%
+  height: 50px
+  border-bottom:  2px solid #AAA
+  background-color: #FFF
+  position: relative
+  padding: 19px 15px 19px 22px
+  img
+    cursor: pointer
+    top: 19px !important
+    right: 22px !important
+.select-input_result
+  display: none !important
+  padding-top: 10px
+  padding-left: 10px
+  left: 0
+  top: 50px
+  z-index: 9999
+  min-height: 90px
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
+  background-color: rgba(255, 255, 255, 1)
+  width: 100%
+  position: absolute
+  p:hover
+    cursor: pointer
+    background-color: #9C9C9C
+
+
+.checkbox-container
+  display: flex
+  width: 100%
+  p
+    margin-bottom: 20px !important
+.input_box
+  margin: 0 !important
+  display: flex
+  flex-direction: row
+  justify-content: flex-start !important
+  gap: 30px
+  div
+    margin: 0 !important
+    justify-content: start !important
+    gap: 10px
+    input
+      border-color: #AAA
+      background-color: black
+      stroke-width: 1px
+      width: 20px !important
+      height: 20px !important
+    input:checked
+      border-color: #AAA
+
+    input::before
+      border-color: #AAA
+      content: ''
+      width: 20px
+      height: 20px
+      background-color: #FFF
+      border-radius: 50%
+      display: block
+
+    input:checked::after
+      display: block
+      border-radius: 50px
+      transform: translate(5px, -15px)
+      content: ''
+      width: 10px
+      height: 10px
+      background-color: #ED2024
+
+
+.broker-select-input
+  padding-top: 11px
+
+.deposit
+  span
+    width: 250px
+.broker-link
+  width: 85px
+  height: 25px
+  position: static !important
+  max-width: 85px !important
+  max-height: 25px !important
+.broker-select-result
+  gap: 13px
+  padding-bottom: 10px
+  flex-direction: column
+
+.comment-box
+  display: flex
+  flex-direction: column !important
+  margin: 25px 0 25px
+  p
+    margin-bottom: 5px
+    color: #6C6C6C
+    font-family: Outfit
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+  span
+    overflow: scroll
+    color: #262626
+    font-family: Outfit
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+    width: 100%
+    height: 100px
+    background-color: #FFF
+    border-bottom: 2px solid #AAA
+
+
+@media screen and (max-width: 999px)
+  .popup_reg
+    form
+      span
+        input
+
+
+@media screen and (max-width: 768px)
+  .broker-link
+    max-width: 85px !important
+    max-height: 25px !important
+  .broker-select-input
+    padding-bottom: 11px
+    padding-left: 15px
+  .deposit
+    height: auto !important
+    span:nth-child(2)
+      p
+  .popup_reg
+    form
+      margin-top: 170px
+      height: auto
+      padding: 35px 20px 30px
+      width: 350px
+      div
+        margin-bottom: 15px
+      span
+        input
+          height: 30px
+          width: 150px
+    .comment-box
+      margin-top: 15px
+      span
+        height: 40px
+
+@media screen and (max-width: 440px)
+  .deposit
+    justify-content: space-between
+    span
+      select
+        width: 120px !important
+
+
+  .popup_reg
+    form
+      margin-top: 80px
+      height: auto
+      padding: 25px 20px 25px
+      width: 310px
+      h2
+        margin-bottom: 20px
+      div
+        margin-bottom: 15px
+      span
+        input
+          width: 120px
+  .select-bottom
+    font-size: 14px !important
+  .comment-box
+    margin: 15px 0 15px !important
+.success-popup
+  display: none
+  top: 200px
+  left: 50%
+  transform: translateX(-50%)
+  //display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  z-index: 999
+  position: fixed
+  width: 600px
+  height: 430px
+  background-color: #F5F5F5
+  gap: 30px
+  h2
+    color: #262626
+    text-align: center
+    font-family: Outfit
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: 120%
+  p
+    color: #6C6C6C
+    text-align: center
+    font-family: Outfit
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+  img
+    border-radius: 100px
+    border: 25px solid #FFF
+    background-color: #FFF
+    margin-bottom: 14px
+
+@media screen and (max-width: 686px)
+  .success-popup
+    width: 500px
+    h2
+      font-size: 22px
+    p
+      font-size: 16px
+
+@media screen and (max-width: 566px)
+  .success-popup
+    width: 400px
+    h2
+      font-size: 18px
+    p
+      font-size: 16px
+@media screen and (max-width: 480px)
+  .success-popup
+    width: 350px
+    h2
+      font-size: 18px
+    p
+      font-size: 16px
+
+@media screen and (max-width: 375px)
+  .success-popup
+    width: 250px
+    height: 350px
+    h2
+      font-size: 16px
+    p
+      font-size: 12px
+
+.select-input_result-block-active
+  display: flex !important

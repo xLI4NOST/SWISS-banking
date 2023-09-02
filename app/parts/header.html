@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+
+    <title><!--#echo var="title" --></title>
+    <meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="icon" href="images/favicon.png">
+    <meta property="og:image" content="images/dist/preview.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+<!--#include virtual="/parts/popup.html" -->
+<!--#include virtual="/parts/success.html" -->
+<div class='wrapper'>
+
+    <header class="header">
+
+        <div class="header_top">
+
+            <img class="header_logo" src="images/svg%20/logo%201.svg" alt="logo">
+
+            <p>Banking solutions<br>
+                <span>
+                    for individual and corporate clients
+                </span>
+
+            </p>
+
+            <div class="contact-block">
+
+                <span>
+                    <a class="img-href" href="tel:++412123456789" ><img src="images/svg%20/call-phone.svg"></a>
+                    <a href="tel:++412123456789">+41 (2)123456789</a>
+                </span>
+
+                <span>
+                    <a class="img-href" href="mailto:mail@swiss-banking.com" > <img src="images/svg%20/mail.svg"></a>
+                    <a href="mailto:mail@swiss-banking.com">mail@swiss-banking.com</a>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="header_nav-bar">
+
+            <div class="burger">
+
+                <img class="burger_image" src="images/svg%20/burger.svg">
+                <p class="menu-word">Menu</p>
+                <ul class="burger_menu">
+                    <li class="burger_button"><a href="#">Online-Broker</a></li>
+                    <li class="burger_button"><a>Swiss Banks</a></li>
+                    <li class="burger_button"><a>EU Banks</a></li>
+                    <li class="burger_button"><a>Fin-Techs</a></li>
+                    <li class="burger_button"><a>Banks in Asia</a></li>
+                    <li class="burger_button"><a>Offshore-Banks</a></li>
+                    <li class="burger_button"><a>Asset Manager</a></li>
+                </ul>
+
+            </div>
+
+            <nav>
+                <a class="header_link" href="#">Online-Broker</a>
+                <a class="header_link" href="#">Swiss Banks</a>
+                <a class="header_link" href="#">EU Banks</a>
+                <a class="header_link" href="#">Fin-Techs</a>
+                <a class="header_link" href="#">Banks in Asia</a>
+                <a class="header_link" href="#">Offshore-Banks</a>
+                <a class="header_link" href="#">Asset Manager</a>
+            </nav>
+
+             <form id="form-header">
+                 
+                 <input class="search-input" type="text" placeholder="Search">
+                 <img class="search-input_close-icon" src="images/svg%20/input-close.svg" alt="close-icon">
+                         <div id="search-result">
+                             <span>
+                                 <h2>Interactive Brokers</h2>
+                                 <p>Online Brocker</p>
+                             </span>
+                             <span>
+                                 <h2>Interactive Brokers</h2>
+                                 <p>Swiss Banks</p>
+                             </span>
+                         </div>
+
+                 <button class="menu-search" type="submit">
+
+                     <img src="images/svg%20/search.svg " alt="search">
+                     
+                 </button>
+             </form>
+
+        </div>
+
+    </header>
+</div>

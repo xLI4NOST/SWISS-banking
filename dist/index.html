@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+
+    <title>OptimizedHTML 5</title>
+    <meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="icon" href="images/favicon.png">
+    <meta property="og:image" content="images/dist/preview.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+<div class="popup_reg">
+    <form class="popup_reg_form">
+        <h2>Open an Account</h2>
+        <img src="images/svg%20/popupclose.svg">
+        <div>
+             <span>
+                <p>First name:</p>
+                <input id="First-name" name="First-name" type="text">
+        </span>
+            <span>
+                <p>Last name:</p>
+                <input id="Last-name" name="Last-name" type="text">
+        </span>
+
+        </div>
+
+        <div>
+             <span>
+                <p>Email:</p>
+                <input id="email"  name="email" type="email">
+        </span>
+            <span>
+                <p>Phone:</p>
+                <input id="phone" name="phone" type="tel">
+        </span>
+
+        </div>
+
+        <div class="country-select">
+
+             <span>
+                <p>Country of residence:</p>
+                 <div class="country-select-input">
+                        <img class="arrow-select" src="images/svg%20/arrow-select.svg" alt="arrow">
+                     <span class="select-input_result" id="select-input_result">
+                         <p class="select-result">Russia</p>
+                         <p class="select-result">Poland</p>
+                         <p class="select-result">Germany</p>
+                     </span>
+                 </div>
+             </span>
+
+        </div>
+
+        <div>
+            <span class="checkbox-container">
+                <p>What type of account you wanna open?</p>
+                <div class="input_box">
+                    <div>
+                        <input id="personal" checked name="account" type="radio">
+                        <label for="personal">Personal</label>
+                    </div>
+                    <div>
+                        <input id="Corporate"  name="account" type="radio">
+                        <label for="Corporate">Corporate</label>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="deposit">
+             <span>
+                <p>What´s your deposit amount?</p>
+                <input name="deposit" id="deposit" type="text">
+        </span>
+            <span>
+                <p>Broker:</p>
+                <div class="country-select">
+                         <div class="country-select-input broker-select-input">
+                                <img src="images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                                <img  class="arrow-select broker-select" src="images/svg%20/arrow-select.svg" alt="arrow">
+                             <span class="select-input_result broker-select-result">
+                                    <img src="images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                                 <img src="images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                                 <img src="images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                             </span>
+                         </div>
+                </div>
+        </span>
+
+        </div>
+
+        <div class="comment-box" >
+            <p>Comment:</p>
+            <span class="comment_massage" contenteditable="true">
+
+            </span>
+        </div>
+        <button type="submit">
+            Send
+        </button>
+
+    </form>
+</div>
+<div class="success-popup">
+    <img src="images/svg%20/success.svg" alt="success">
+    <h2>Your message was sent successfully</h2>
+    <p>We will contact you shortly.</p>
+</div>
+<div class='wrapper'>
+
+    <header class="header">
+
+        <div class="header_top">
+
+            <img class="header_logo" src="images/svg%20/logo%201.svg" alt="logo">
+
+            <p>Banking solutions<br>
+                <span>
+                    for individual and corporate clients
+                </span>
+
+            </p>
+
+            <div class="contact-block">
+
+                <span>
+                    <a class="img-href" href="tel:++412123456789" ><img src="images/svg%20/call-phone.svg"></a>
+                    <a href="tel:++412123456789">+41 (2)123456789</a>
+                </span>
+
+                <span>
+                    <a class="img-href" href="mailto:mail@swiss-banking.com" > <img src="images/svg%20/mail.svg"></a>
+                    <a href="mailto:mail@swiss-banking.com">mail@swiss-banking.com</a>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="header_nav-bar">
+
+            <div class="burger">
+
+                <img class="burger_image" src="images/svg%20/burger.svg">
+                <p class="menu-word">Menu</p>
+                <ul class="burger_menu">
+                    <li class="burger_button"><a href="#">Online-Broker</a></li>
+                    <li class="burger_button"><a>Swiss Banks</a></li>
+                    <li class="burger_button"><a>EU Banks</a></li>
+                    <li class="burger_button"><a>Fin-Techs</a></li>
+                    <li class="burger_button"><a>Banks in Asia</a></li>
+                    <li class="burger_button"><a>Offshore-Banks</a></li>
+                    <li class="burger_button"><a>Asset Manager</a></li>
+                </ul>
+
+            </div>
+
+            <nav>
+                <a class="header_link" href="#">Online-Broker</a>
+                <a class="header_link" href="#">Swiss Banks</a>
+                <a class="header_link" href="#">EU Banks</a>
+                <a class="header_link" href="#">Fin-Techs</a>
+                <a class="header_link" href="#">Banks in Asia</a>
+                <a class="header_link" href="#">Offshore-Banks</a>
+                <a class="header_link" href="#">Asset Manager</a>
+            </nav>
+
+             <form id="form-header">
+                 
+                 <input class="search-input" type="text" placeholder="Search">
+                 <img class="search-input_close-icon" src="images/svg%20/input-close.svg" alt="close-icon">
+                         <div id="search-result">
+                             <span>
+                                 <h2>Interactive Brokers</h2>
+                                 <p>Online Brocker</p>
+                             </span>
+                             <span>
+                                 <h2>Interactive Brokers</h2>
+                                 <p>Swiss Banks</p>
+                             </span>
+                         </div>
+
+                 <button class="menu-search" type="submit">
+
+                     <img src="images/svg%20/search.svg " alt="search">
+                     
+                 </button>
+             </form>
+
+        </div>
+
+    </header>
+</div>
+<div class="main">
+
+
+
+
+
+</div>
+<div class="wrapper">
+    <section class="description">
+        <span>
+        <img class="description-image" src="images/svg%20/interactiveBrokers.svg" alt="description-icon"/>
+        </span>
+        <h2>Interactive Brokers</h2>
+        <p>Interactive Brokers is a major global online brokerage firm primarily known for its trading platform, tools, and services. The firm is based in Greenwich, Connecticut, and operates the largest electronic trading platform in the U.S. by number of daily average revenue trades.<br>
+            <br>
+            The firm offers a broad range of services, including trading in stocks, options, futures, forex, bonds, and funds. Interactive Brokers caters to several types of users: individual investors, institutional investors, financial advisors, and broker-dealers. <br>
+            <br>
+            The company has been noted for its robust trading platform called Trader Workstation (TWS). TWS is designed for active traders and institutions and provides a wealth of features, including advanced order types, algorithmic trading, risk management tools, and a comprehensive charting package. There's also a Web-based version and a mobile app, providing flexibility for users with different needs or preferences.<br>
+            <br>
+            Moreover, Interactive Brokers is also known for its competitive fees and commission structures, which are particularly attractive for high-volume traders. The firm often has low margin rates as well.<br>
+            <br>
+            One of the distinctive features of Interactive Brokers is its global reach. It provides direct market access to stocks, options, futures, forex, bonds, and funds in over 135 markets in numerous countries around the world.<br>
+            <br>
+            The company's extensive offerings and complex platform make it a go-to for serious traders and investors, although it may be a bit overwhelming for beginners who are new to investing.</p>
+    </section>
+
+    <section class="description description2">
+        <span>
+        <img class="description-image" src="images/svg%20/tradeStation.svg" alt="description-icon"/>
+        </span>
+        <h2>Tradestation</h2>
+        <p>TradeStation is a leading online brokerage firm known for its analysis software, electronic trading platform, and trading technology. As of my last knowledge update in September 2021, it's based in Plantation, Florida.<br>
+            <br>
+            TTradeStation offers various services such as trading in stocks, options, futures, and cryptocurrencies. It caters to different types of traders ranging from individual active traders to institutional traders. <br>
+            <br>
+            The key feature of TradeStation is its advanced and robust trading platform that provides high-speed order execution, real-time market data, and fully customizable charts and analysis tools. It offers three different trading platforms: TradeStation 10 (desktop-based), Web Trading (web-based), and TS GO (mobile-based). These platforms offer users a variety of trading tools, including radar screens for market monitoring, advanced charting and back-testing capabilities, and algorithmic trading strategies.<br>
+            <br>
+            The company is known for its competitive pricing structure. TradeStation has made significant strides to make its pricing more accessible, including offering commission-free trades on stocks and ETFs.<br>
+            <br>
+            TradeStation's EasyLanguage programming language is a distinguishing feature. It allows traders to create their custom trading strategies, indicators, and order types. It's less complex than many other programming languages, opening up strategy development to a wider array of traders.<br>
+            <br>
+            TradeStation also provides educational resources for traders, including webinars, video tutorials, and articles to help users understand the platform and enhance their trading knowledge.<br>
+            <br>
+            As with any brokerage, the specifics of TradeStation's offerings, pricing, and features may have changed post-September 2021, and it would be wise to visit TradeStation's website or contact their customer service for the most recent updates.
+        </p>
+    </section>
+</div>
+<section class="contact-us">
+
+    <div class="contact-us_text">
+        <h2>Contact us for a free consulation</h2>
+        <h2 class="t-2">What Do We Do</h2>
+        <p>We are a team banking experts who can help you in setting bank, brokerage or payment accounts.With out network of appr. 630 different instituation we can always find the best solutions for your needs.</p>
+        <p class="t-2 t-2p">We function as financial mediators; our role is to connect businesses and individuals with banks, asset managers, and other financial institutions per their requests to support them in achieving their financial goals.</p>
+    </div>
+
+    <div class="contact-us_images">
+
+            <span>
+                <img src="images/svg%20/people.svg">
+                <h2>More than 2.000 satisfied&nbspcustomers</h2>
+            </span>
+        <span>
+                <img src="images/svg%20/backpack.svg">
+                <h2>In the industry for&nbspover&nbsp20&nbspyears</h2>
+            </span>
+        <span>
+                <img src="images/svg%20/shield.svg">
+                <h2>Best address for Swiss and international&nbspbanking&nbspsolutions</h2>
+            </span>
+
+    </div>
+    <button>
+        Contact Us
+    </button>
+
+</section>
+
+
+<script src="js/app.min.js"></script>
+</div>
+</body>
+<footer class="footer">
+    <section class="nav-block">
+
+        <nav>
+            <h2>Swiss Trading and Investing</h2>
+            <ul class="footer_links">
+                <li class="footer_link"><a href="#">Swiss Bank Account</a></li>
+                <li class="footer_link"><a href="#">Swiss banking secrecy</a></li>
+                <li class="footer_link"><a href="#">Using A Credit Card In Switzerland</a></li>
+            </ul>
+        </nav>
+
+        <nav>
+            <h2>Swiss Market</h2>
+            <ul class="footer_links">
+                <li class="footer_link"><a href="#">Globalization And Multinational Companies</a></li>
+                <li class="footer_link"><a href="#">Swiss Economy</a></li>
+                <li class="footer_link"><a href="#">How Can The Govt Help</a></li>
+                <li class="footer_link"><a href="#">Bear Market</a></li>
+                <li class="footer_link"><a href="#">Stakeholders</a></li>
+            </ul>
+        </nav>
+
+        <nav>
+            <h2>Swiss Trading and Investing</h2>
+            <ul class="footer_links">
+                <li class="footer_link"><a href="#">The Basics about Investing & Trading</a></li>
+                <li class="footer_link"><a href="#">Stock Control</a></li>
+                <li class="footer_link"><a href="#">SIX Swiss Exchange</a></li>
+                <li class="footer_link"><a href="#">Market Research</a></li>
+                <li class="footer_link"><a href="#">CryptoCurrency Taking Over Switzerland</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact-block footer_contact_block">
+
+                <span class="footer_contacts-container">
+                    <a class="img-href" href="tel:++412123456789" ><img class="footer_svg" src="images/svg%20/call-phone.svg"></a>
+                    <a class="footer_contacts" href="tel:++412123456789">+41 (2)123456789</a>
+                </span>
+
+            <span class="footer_contacts-container">
+                    <a class="img-href" href="mailto:mail@swiss-banking.com"><img class="footer_svg" src="images/svg%20/mail.svg"></a>
+                    <a class="footer_contacts" href="mailto:mail@swiss-banking.com">mail@swiss-banking.com</a>
+                </span>
+
+        </div>
+
+    </section>
+    <div class="copyright-block">
+        <img src="images/svg%20/©%202023%20SwissBanking.svg" alt="copyrightImage">
+    </div>
+</footer>
+</html>
