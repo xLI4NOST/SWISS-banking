@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // события на фокус
     searchInput.addEventListener('focus', ()=>{
-        burgerIcon.src='images/svg%20/plus.svg'
+        burgerIcon.style.display='none'
+        burgerCloseIcon.style.display='block'
         menuSearch.style.display='none'
         menuWord.style.display='none'
     })
@@ -129,7 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('blur', ()=>{
         menuSearch.style.display='block'
         menuWord.style.display='block'
-        burgerIcon.src='images/svg%20/burger.svg'
+
+        burgerIcon.style.display='block'
+        burgerCloseIcon.style.display='none'
         setTimeout(()=>{
             // searchResult.style.display='none'
         }, 900)
