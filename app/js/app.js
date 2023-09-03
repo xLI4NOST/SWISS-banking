@@ -156,14 +156,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //popup//
-
+    const popupRegClose= document.getElementById('popup_reg-close')
+    const popupReg = document.querySelector('.popup_reg')
     const selectArrow= document.querySelector('.arrow-select')
     const searchSelectBlock= document.getElementById('select-input_result')
     const selectResult = document.querySelectorAll('.select-result')
     const brokerSelectArrow = document.querySelector('.broker-select')
     const brokerSelectResult = document.querySelector('.broker-select-result')
     const brokerLinks = document.querySelectorAll('.broker-link')
+    const popupRegForm = document.querySelector('.popup_reg_form')
 
+    popupRegClose.addEventListener('click', ()=>{
+        popupReg.style.display='none'
+    })
+    popupReg.addEventListener('click', ()=>{
+        popupReg.style.display='none'
+    })
+    popupRegForm.addEventListener('click', (e)=>{
+        e.stopPropagation()
+    })
 
     selectArrow.addEventListener('click', ()=>{
         searchSelectBlock.classList.add('select-input_result-block-active')
