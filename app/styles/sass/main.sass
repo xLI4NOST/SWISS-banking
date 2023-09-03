@@ -89,6 +89,7 @@
   flex-wrap: nowrap
   gap: 9px
   span
+    display: flex
     img
       padding-right: 14px
     a
@@ -178,7 +179,7 @@
     input:focus
       padding-left: 10px
       transform: translateY(-11px)
-      min-height: 55px
+      min-height: 50px
       min-width: 250px
       border: 2px solid #AAA
       background: #FFF
@@ -207,8 +208,10 @@
     a
       font-size: 14px
     form
+      input
+        transform: translateY(-1px)
       input:focus
-        min-height: 50px
+        min-height: 45px
 
 
 @media screen and (max-width: 1109px)
@@ -217,7 +220,7 @@
       font-size: 11px
     form
       input:focus
-        min-height: 46px
+        min-height: 40px
 
 
 @media screen and (max-width: 999px)
@@ -237,6 +240,8 @@
       div
         max-width: 100%
         transform: translateX(10px)
+      input
+        transform: translateY(2px)
       input:focus
         min-height: 50px
         padding-bottom: 23px

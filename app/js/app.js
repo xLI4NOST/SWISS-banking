@@ -124,23 +124,28 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerCloseIcon.style.display='block'
         menuSearch.style.display='none'
         menuWord.style.display='none'
+        searchInput.style.minWidth='250px'
     })
 
     // события на блур
     searchInput.addEventListener('blur', ()=>{
         menuSearch.style.display='block'
         menuWord.style.display='block'
-
         burgerIcon.style.display='block'
         burgerCloseIcon.style.display='none'
         setTimeout(()=>{
-            // searchResult.style.display='none'
-        }, 900)
+            searchResult.style.display='none'
+        }, 10)
+        setTimeout( ()=>{
+            searchInput.style.minWidth='auto'
+
+        }, 15)
+        searchInput.style.minWidth='250px'
+
         searchInputClose.classList.remove('active_close-icon')
         searchInput.value=''
     })
     headerForm.addEventListener('click', (e)=>e.stopPropagation())
-
     // открыть окно с результатами поиска
     const openResult = (e) =>{
         e.preventDefault()
