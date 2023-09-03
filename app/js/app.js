@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultState = ()=>{
         // menuButtons[0].classList.add('active-li')
         headerNav[0].classList.add('active-link')
-        tableContent.innerHTML = onlineBroker
     }
     defaultState()
 
