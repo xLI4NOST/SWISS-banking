@@ -1,8 +1,6 @@
 // // Import vendor jQuery plugin example
 // import '~/app/libs/mmenu/dist/mmenu.js'
 
-import {onlineBroker, swissBanks, tableContent} from "./table.js";
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -16,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerNav = document.querySelectorAll('.header_link')
     const searchInput= document.querySelector('.search-input')
     const burgerIcon= document.querySelector('.burger_image')
+    const burgerCloseIcon = document.querySelector('.burger_image-plus')
 
     const defaultState = ()=>{
         // menuButtons[0].classList.add('active-li')
         headerNav[0].classList.add('active-link')
     }
-    defaultState()
 
     //Выбрать ссылку в хедере
     // function selectHeaderLink(e){
@@ -65,9 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBurger =()=>{
         menu.classList.toggle('burger_active')
         if(menu.classList.contains('burger_active')){
-            burgerIcon.src='images/svg%20/plus.svg'
+            burgerCloseIcon.style.display='block'
+            burgerIcon.style.display='none'
+
         }else{
-            burgerIcon.src='images/svg%20/burger.svg'
+            burgerCloseIcon.style.display='none'
+            burgerIcon.style.display='block'
         }
 
     }
@@ -129,7 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
         menuSearch.style.display='block'
         menuWord.style.display='block'
         burgerIcon.src='images/svg%20/burger.svg'
-        searchResult.style.display='none'
+        setTimeout(()=>{
+            // searchResult.style.display='none'
+        }, 900)
         searchInputClose.classList.remove('active_close-icon')
         searchInput.value=''
     })
@@ -142,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchInput.value.length>0){
             searchResult.style.display='block'
         }else {
-            searchResult.style.display='none'
+            // searchResult.style.display='none'
         }
     }
 
