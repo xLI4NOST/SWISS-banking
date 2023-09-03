@@ -18,44 +18,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerIcon= document.querySelector('.burger_image')
 
     const defaultState = ()=>{
-        menuButtons[0].classList.add('active-li')
+        // menuButtons[0].classList.add('active-li')
         headerNav[0].classList.add('active-link')
         tableContent.innerHTML = onlineBroker
     }
     defaultState()
 
     //Выбрать ссылку в хедере
-    function selectHeaderLink(e){
-
-        let activeLink = document.querySelector('.header_link.active-link')
-
-        if(activeLink){
-            activeLink.classList.remove('active-link')
-        }
-
-
-        e.target.classList.add('active-link')
-
-        let state= e.target.innerHTML
-
-        switch (state){
-            case 'Online-Broker':
-                tableContent.innerHTML = onlineBroker
-
-                break
-            case 'Swiss Banks'   :
-                tableContent.innerHTML=swissBanks
-                break
-
-        }
-
-    }
-
-            headerNav.forEach((item)=>{
-
-                item.addEventListener('click' , selectHeaderLink)
-
-                 })
+    // function selectHeaderLink(e){
+    //
+    //     let activeLink = document.querySelector('.header_link.active-link')
+    //
+    //     if(activeLink){
+    //         activeLink.classList.remove('active-link')
+    //     }
+    //
+    //
+    //     e.target.classList.add('active-link')
+    //
+    //     let state= e.target.innerHTML
+    //
+    //     switch (state){
+    //         case 'Online-Broker':
+    //             tableContent.innerHTML = onlineBroker
+    //
+    //             break
+    //         case 'Swiss Banks'   :
+    //             tableContent.innerHTML=swissBanks
+    //             break
+    //
+    //     }
+    //
+    // }
+    //
+    //         headerNav.forEach((item)=>{
+    //
+    //             item.addEventListener('click' , selectHeaderLink)
+    //
+    //              })
 
     ///headerNav///
 
@@ -78,35 +78,35 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let menuButton of menuButtons){
 
 
-        const selectBurgerLink = (e)=>{
-            let state= e.target.innerHTML
+        const selectBurgerLink = (e)=> {
+            let state = e.target.innerHTML
 
-            switch (state){
-                case 'Online-Broker':
-                    tableContent.innerHTML = onlineBroker
-
-                    break
-                case 'Swiss Banks'   :
-                    tableContent.innerHTML=swissBanks
-                    break
-
-            }
+            // switch (state){
+            //     case 'Online-Broker':
+            //         tableContent.innerHTML = onlineBroker
+            //
+            //         break
+            //     case 'Swiss Banks'   :
+            //         tableContent.innerHTML=swissBanks
+            //         break
+            //
+            // }
             e.stopPropagation()
-            let activeButton = document.querySelector('.burger_button.active-li')
-
-            if(activeButton){
-
-                activeButton.classList.remove('active-li')
-
-            }
-            menuButton.classList.add('active-li')
-
+            //     let activeButton = document.querySelector('.burger_button.active-li')
+            //
+            //     if(activeButton){
+            //
+            //         activeButton.classList.remove('active-li')
+            //
+            //     }
+            //     menuButton.classList.add('active-li')
+            //
+            // }
         }
 
-        menuButton.addEventListener('click',selectBurgerLink)
+
 
     }
-
 
     ///burgerMenu///
 
@@ -202,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    
-    
+
+
 
 
 

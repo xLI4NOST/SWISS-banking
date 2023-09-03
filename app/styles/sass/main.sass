@@ -17,6 +17,9 @@
   display: none
   gap: 13px
   position: relative
+  a
+    font-size: 18px !important
+
   p
     margin: 0
     color: #FFF
@@ -138,6 +141,7 @@
       background-color: rgba(255, 255, 255, 1)
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
       span
+        cursor: pointer
         h2
           margin-bottom: 5px
           color: #262626
@@ -153,8 +157,12 @@
           font-style: normal
           font-weight: 400
           line-height: 120%
+      span:hover
+        h2
+          color: red
 
     input
+      transform: translateY(3px)
       color: #9C9C9C
       font-family: Outfit
       font-size: 18px
@@ -167,6 +175,7 @@
       border: none
       max-width: 56px
     input:focus
+      padding-left: 10px
       transform: translateY(-11px)
       min-height: 55px
       min-width: 250px
@@ -320,8 +329,7 @@ tr
     background-color: #262626
 
 tr:nth-child(2n)
-  opacity: 0.5
-
+  background-color: #FAFAFA
 .broker
   color: #000
   font-family: Outfit
