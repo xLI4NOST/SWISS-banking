@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchResult= document.getElementById('search-result')
     const searchInputClose= document.querySelector('.search-input_close-icon')
     const headerForm = document.getElementById('form-header')
+    const menuSearchButton = document.querySelector('.menu-search')
 
 
     // события на фокус
@@ -136,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     headerForm.addEventListener('click', (e)=>e.stopPropagation())
 
     // открыть окно с результатами поиска
-    const openResult = () =>{
+    const openResult = (e) =>{
+        e.preventDefault()
         searchInputClose.classList.add('active_close-icon')
         if (searchInput.value.length>0){
             searchResult.style.display='block'
@@ -145,12 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const openSeacrchInput =()=>{
+
+    }
+
+
     searchInput.addEventListener('input',  openResult)
     searchInputClose.addEventListener('click', (e)=>{
         e.stopPropagation()
         searchInput.value=''
     })
-
+    menuSearchButton.addEventListener('click', ()=>{
+        searchInput.focus()
+    })
     //headerInput//
 
 
@@ -198,7 +207,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
     //popup//
+const popupReg= document.querySelector('.popup_reg')
+const popUpButton = document.querySelector('.open-popup-reg')
+const openPopup =()=>{
+    popupReg.style.display='block'
+}
 
+popUpButton.addEventListener('click', openPopup )
 
 
 
