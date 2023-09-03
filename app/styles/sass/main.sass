@@ -100,12 +100,44 @@
   position: absolute
   width: 20px
   height: 20px
-  top: 6px
+  top: 2px
   display: none
   right: 0
 
 .active_close-icon
   display: block
+
+.search-result
+  width: 250px
+  display: none
+  padding: 7px 8px 7px
+  z-index: 9999999
+  top: 50px
+  right: 0
+  position: absolute
+  background-color: rgba(255, 255, 255, 1)
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
+  a
+    cursor: pointer
+    h2
+      margin-bottom: 5px
+      color: #262626
+      font-family: Outfit
+      font-size: 16px
+      font-style: normal
+      font-weight: 400
+      line-height: 120%
+    p
+      color: #AAA
+      font-family: Outfit
+      font-size: 16px
+      font-style: normal
+      font-weight: 400
+      line-height: 120%
+  a:hover
+    h2
+      color: red
+
 
 .header_nav-bar
   position: relative
@@ -139,7 +171,7 @@
       z-index: 9999999
       top: 50px
       position: absolute
-      width: 105%
+      width: 250px
       background-color: rgba(255, 255, 255, 1)
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
       a
@@ -224,6 +256,11 @@
 
 
 @media screen and (max-width: 999px)
+  .search-input_close-icon
+    top: 6px
+  .search-result
+    top: 60px
+    width: 100%
   .burger
     display: flex
     ul

@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerCloseIcon.style.display='block'
         menuSearch.style.display='none'
         menuWord.style.display='none'
-        searchInput.style.minWidth='250px'
     })
 
     // события на блур
@@ -135,12 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerCloseIcon.style.display='none'
         setTimeout(()=>{
             searchResult.style.display='none'
-        }, 10)
-        setTimeout( ()=>{
-            searchInput.style.minWidth='auto'
-
-        }, 15)
-        searchInput.style.minWidth='250px'
+        }, 100)
 
         searchInputClose.classList.remove('active_close-icon')
         searchInput.value=''
