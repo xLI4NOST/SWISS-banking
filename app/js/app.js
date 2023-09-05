@@ -21,39 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         headerNav[0].classList.add('active-link')
     }
 
-    //Выбрать ссылку в хедере
-    // function selectHeaderLink(e){
-    //
-    //     let activeLink = document.querySelector('.header_link.active-link')
-    //
-    //     if(activeLink){
-    //         activeLink.classList.remove('active-link')
-    //     }
-    //
-    //
-    //     e.target.classList.add('active-link')
-    //
-    //     let state= e.target.innerHTML
-    //
-    //     switch (state){
-    //         case 'Online-Broker':
-    //             tableContent.innerHTML = onlineBroker
-    //
-    //             break
-    //         case 'Swiss Banks'   :
-    //             tableContent.innerHTML=swissBanks
-    //             break
-    //
-    //     }
-    //
-    // }
-    //
-    //         headerNav.forEach((item)=>{
-    //
-    //             item.addEventListener('click' , selectHeaderLink)
-    //
-    //              })
-
     ///headerNav///
 
 
@@ -81,27 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectBurgerLink = (e)=> {
             let state = e.target.innerHTML
 
-            // switch (state){
-            //     case 'Online-Broker':
-            //         tableContent.innerHTML = onlineBroker
-            //
-            //         break
-            //     case 'Swiss Banks'   :
-            //         tableContent.innerHTML=swissBanks
-            //         break
-            //
-            // }
             e.stopPropagation()
-            //     let activeButton = document.querySelector('.burger_button.active-li')
-            //
-            //     if(activeButton){
-            //
-            //         activeButton.classList.remove('active-li')
-            //
-            //     }
-            //     menuButton.classList.add('active-li')
-            //
-            // }
+
         }
 
 
@@ -124,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
         burgerCloseIcon.style.display='block'
         menuSearch.style.display='none'
         menuWord.style.display='none'
+        langBlock.style.display='none'
+    })
+
+    main.addEventListener('click', ()=>{
+        searchResult.style.display='none'
     })
 
     // события на блур
@@ -132,9 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuWord.style.display='block'
         burgerIcon.style.display='block'
         burgerCloseIcon.style.display='none'
-        setTimeout(()=>{
-            searchResult.style.display='none'
-        }, 100)
+        langBlock.style.display='flex'
+
 
         searchInputClose.classList.remove('active_close-icon')
         searchInput.value=''
@@ -222,9 +174,52 @@ popUpButton.addEventListener('click', openPopup )
 
 
 
+///lang
+const langBlock = document.querySelector('.select-lang')
+const dropDownButton= document.querySelector('.dropdown-icon')
+const langResultBlock = document.querySelector('.lang-result')
+const langButton = document.querySelector('.lang-button')
+const langVariant = document.querySelector('.lang-variant')
+const dropDownButtonRed= document.querySelector('.dropdown-icon-red')
+const langInfo = document.querySelectorAll('.lang-info')
+const langWord = document.querySelector('.lang-word')
+const main = document.querySelector('.main')
+
+//открыть результаты
+langBlock.addEventListener('click', ()=>{
+    // if(langResultBlock.style.display='none'){
+    //     langResultBlock.classList.add('select-lang_active')
+    // }else {
+    //     langResultBlock.classList.remove('select-lang_active')
+    // }
+    langResultBlock.classList.toggle('lang-result_active')
+    if(langResultBlock.classList.contains('lang-result_active')){
+        dropDownButtonRed.style.transform='rotate(180deg)'
+        dropDownButton.style.transform='rotate(180deg)'
+    } else {
+        dropDownButtonRed.style.transform='rotate(0deg) translateY(10px)'
+        dropDownButton.style.transform='rotate(0deg)'
+    }
+})
+
+langResultBlock.addEventListener('click', (e)=>{
+    e.stopPropagation()
+})
+
+main.addEventListener('click', ()=>{
+    langResultBlock.classList.remove('lang-result_active')
+    dropDownButton.style.transform='rotate(0deg)'
+    dropDownButtonRed.style.transform='rotate(0deg) translateY(10px)'
+})
 
 
+langInfo.forEach((item)=>{
+    item.addEventListener('click', ()=>{
+        setTimeout(()=>{
+            langResultBlock.classList.remove('lang-result_active')
+            dropDownButton.style.transform='rotate(0deg)'
+            dropDownButtonRed.style.transform='rotate(0deg) translateY(10px)'
+        }, 100)
 
-
-
-
+    })
+})

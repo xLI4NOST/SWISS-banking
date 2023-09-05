@@ -227,6 +227,53 @@
       max-height: 24px
       background-color: transparent
       border: none
+.select-lang
+  z-index: 101
+  position: relative
+  align-items: start
+  display: flex
+  gap: 7px
+  p
+    transform: translateY(-3px)
+    color: #9C9C9C
+    font-family: Outfit
+    font-size: 20px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin: 0
+
+
+
+.dropdown-icon
+  margin-left: -5px
+  cursor: pointer
+  margin-left: -8px
+
+.dropdown-icon-red
+  margin: 0
+  display: none
+
+.lang-result
+  display: none
+  gap: 10px
+  padding: 4px
+  top: 30px
+  width: 120%
+  min-height: 30px
+  position: absolute
+  background-color: #262626
+  span
+    gap: 7px
+    cursor: pointer
+    display: flex
+
+.lang-result_active
+  display: block
+
+.lang
+  cursor: pointer
+  max-height: 15px
 
 .burger_image-plus
   display: none
@@ -253,9 +300,32 @@
     form
       input:focus
         min-height: 40px
-
+.lang-word
+  cursor: pointer
 
 @media screen and (max-width: 999px)
+  .dropdown-icon-red
+    transform: translateY(10px)
+    display: block !important
+  .dropdown-icon
+    display: none
+  .lang
+    transform: translateY(5px)
+  .select-lang
+    gap: 3px
+    right: 120px
+    position: absolute
+  .lang-word
+    display: none
+  .lang-result
+    top: 37px
+    left: -5px
+    width: 35px
+    span
+      justify-content: center
+
+
+
   .search-input_close-icon
     top: 6px
   .search-result
@@ -315,11 +385,16 @@
   .header_nav-bar
     position: relative
   .burger
+    gap: 7px
     position: static
     ul
       left: 0
       top: 50px
       width: 100%
+
+@media screen and (max-width: 340px)
+  .burger
+    gap: 4px
 
 .main
   width: 100%
@@ -337,7 +412,7 @@
   gap: 22px
   transform: translateY(-50px)
 td
-  width: 250px
+  white-space: nowrap
   padding: 15px 0 16px 20px
   color: #6C6C6C
   font-family: Outfit
@@ -679,7 +754,9 @@ tr:nth-child(2n)
 @media screen and (max-width: 480px)
   .footer
     padding: 50px 20px 0
-
+.phone-input
+  div
+    margin-bottom: 0 !important
 .popup_reg
   overflow: scroll
   display: none
@@ -776,6 +853,12 @@ tr:nth-child(2n)
 
 .country-select
   min-width: 100%
+  color: #262626
+  font-family: Outfit
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 120%
   span
     width: 100% !important
 
@@ -903,58 +986,64 @@ tr:nth-child(2n)
 
 
 @media screen and (max-width: 768px)
-  .broker-link
-    max-width: 85px !important
-    max-height: 25px !important
+  .popup_reg-form_container-input-box
+    width: 50% !important
+  .popup_reg_form
+    width: 100% !important
+    height: 100% !important
+  .popup_reg-form_container
+    gap: 30px !important
+  .deposit
+    gap: 30px
+  .phone-input
+    width: 50%
+    input
+      width: 100% !important
+  .popup_reg-form_container-input-box
+    width: 100%
+    input
+      width: auto !important
+
+@media screen and (max-width: 521px)
+  .country-select
+    margin-bottom: 0 !important
+  .popup_reg-form_container-input-box
+    align-self: end
+@media screen and (max-width: 480px)
+  .popup_reg-form_container
+    gap: 15px !important
+  .deposit
+    gap: 15px
+  .popup_reg_form
+    padding: 50px 20px !important
+
+@media screen and (max-width: 420px)
+  .popup_reg-form_container-input-box
+    width: 150px !important
+  .phone-input
+    max-width: 150px
+  .popup_reg-form_container
+    gap: 15px !important
+  .deposit
+    gap: 15px
+  .popup_reg_form
+    padding: 50px 20px !important
+
+@media screen and (max-width: 350px)
+  .popup_reg-form_container-input-box
+    width: 130px !important
+  .phone-input
+    max-width: 130px
+  .popup_reg-form_container
+    gap: 15px !important
+  .deposit
+    gap: 15px
+  .popup_reg_form
+    padding: 50px 20px !important
   .broker-select-input
-    padding-bottom: 11px
-    padding-left: 15px
-  .deposit
-    height: auto !important
-    span:nth-child(2)
-      p
-  .popup_reg
-    form
-      margin-top: 170px
-      height: auto
-      padding: 35px 20px 30px
-      width: 350px
-      div
-        margin-bottom: 15px
-      span
-        input
-          height: 30px
-          width: 150px
-    .comment-box
-      margin-top: 15px
-      span
-        height: 40px
-
-@media screen and (max-width: 440px)
-  .deposit
-    justify-content: space-between
-    span
-      select
-        width: 120px !important
+    padding: 19px 10px 19px 5px
 
 
-  .popup_reg
-    form
-      margin-top: 80px
-      height: auto
-      padding: 25px 20px 25px
-      width: 310px
-      h2
-        margin-bottom: 20px
-      div
-        margin-bottom: 15px
-      span
-        input
-          width: 120px
-  .select-bottom
-    font-size: 14px !important
-  .comment-box
-    margin: 15px 0 15px !important
 .success-popup
   display: none
   top: 200px
@@ -1028,3 +1117,4 @@ tr:nth-child(2n)
   display: flex !important
 
 .open-popup-reg
+

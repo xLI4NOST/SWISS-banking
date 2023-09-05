@@ -5,7 +5,7 @@
 // const email= document.getElementById('email')
 // const phone = document.getElementById('phone')
 // const deposit = document.getElementById('deposit')
-
+//
 // const submitFunc =(e)=>{
 //     e.preventDefault()
 //
