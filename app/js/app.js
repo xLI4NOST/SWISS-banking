@@ -126,38 +126,68 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectArrow= document.querySelector('.arrow-select')
     const searchSelectBlock= document.getElementById('select-input_result')
     const selectResult = document.querySelectorAll('.select-result')
-    const brokerSelectArrow = document.querySelector('.broker-select')
+    const brokerSelectArrow = document.querySelector('.broker-select-input')
     const brokerSelectResult = document.querySelector('.broker-select-result')
     const brokerLinks = document.querySelectorAll('.broker-link')
     const popupRegForm = document.querySelector('.popup_reg_form')
+    const formPopup= document.querySelector('.popup_reg_form')
+    const countrySelect = document.querySelector('.country-select-input')
+    const selectedBrokerLink = document.querySelector('.broker-link-select')
+
+
+    formPopup.addEventListener('click', ()=>{
+        brokerSelectResult.classList.remove('select-input_result-block-active')
+        searchSelectBlock.classList.remove('select-input_result-block-active')
+    })
+
+    selectedBrokerLink.addEventListener('click', (e)=>{
+        e.stopPropagation()
+        brokerSelectResult.classList.add('select-input_result-block-active')
+    })
+
+    countrySelect.addEventListener('click', (e)=>{
+        e.stopPropagation()
+        searchSelectBlock.classList.add('select-input_result-block-active')
+    })
 
     popupRegClose.addEventListener('click', ()=>{
         popupReg.style.display='none'
+        document.body.style.overflow='scroll'
     })
     popupReg.addEventListener('click', ()=>{
         popupReg.style.display='none'
+        document.body.style.overflow='scroll'
     })
     popupRegForm.addEventListener('click', (e)=>{
         e.stopPropagation()
     })
 
-    selectArrow.addEventListener('click', ()=>{
-        searchSelectBlock.classList.add('select-input_result-block-active')
-    })
+const textInputCountry = document.getElementById('text-country')
 
     for (let resultButton of selectResult){
-        resultButton.addEventListener('click', ()=> {
-            searchSelectBlock.classList.remove('select-input_result-block-active')
+        resultButton.addEventListener('click', (e)=> {
+            e.stopPropagation()
+            textInputCountry.textContent=resultButton.textContent
+            setTimeout(()=>{
+                searchSelectBlock.classList.remove('select-input_result-block-active')
+            }, 100)
+
         })
     }
 
     for (let brokerLink of brokerLinks){
-        brokerLink.addEventListener('click', ()=> {
-            brokerSelectResult.classList.remove('select-input_result-block-active')
+        brokerLink.addEventListener('click', (e)=> {
+            e.stopPropagation()
+            selectedBrokerLink.src= brokerLink.src
+            setTimeout( ()=>{
+                brokerSelectResult.classList.remove('select-input_result-block-active')
+            }, 100)
+
         })
     }
 
-    brokerSelectArrow.addEventListener('click', ()=> {
+    brokerSelectArrow.addEventListener('click', (e)=> {
+        e.stopPropagation()
         brokerSelectResult.classList.add('select-input_result-block-active')
     })
 })
@@ -165,8 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //popup//
 const popupReg= document.querySelector('.popup_reg')
 const popUpButton = document.querySelector('.open-popup-reg')
+const header= document.querySelector('.header')
+
 const openPopup =()=>{
+    document.body.style.overflow='hidden'
+    header.style.margin='0'
     popupReg.style.display='block'
+
 }
 
 popUpButton.addEventListener('click', openPopup )
@@ -175,6 +210,7 @@ popUpButton.addEventListener('click', openPopup )
 
 
 ///lang
+const body = document.querySelector('body')
 const langBlock = document.querySelector('.select-lang')
 const dropDownButton= document.querySelector('.dropdown-icon')
 const langResultBlock = document.querySelector('.lang-result')
@@ -186,7 +222,8 @@ const langWord = document.querySelector('.lang-word')
 const main = document.querySelector('.main')
 
 //открыть результаты
-langBlock.addEventListener('click', ()=>{
+langBlock.addEventListener('click', (e)=>{
+    e.stopPropagation()
     // if(langResultBlock.style.display='none'){
     //     langResultBlock.classList.add('select-lang_active')
     // }else {
@@ -202,19 +239,24 @@ langBlock.addEventListener('click', ()=>{
     }
 })
 
-langResultBlock.addEventListener('click', (e)=>{
-    e.stopPropagation()
-})
-
-main.addEventListener('click', ()=>{
+body.addEventListener('click', ()=>{
     langResultBlock.classList.remove('lang-result_active')
     dropDownButton.style.transform='rotate(0deg)'
     dropDownButtonRed.style.transform='rotate(0deg) translateY(10px)'
 })
 
 
+
+langResultBlock.addEventListener('click', (e)=>{
+    e.stopPropagation()
+})
+
+
+
+
 langInfo.forEach((item)=>{
     item.addEventListener('click', ()=>{
+
         setTimeout(()=>{
             langResultBlock.classList.remove('lang-result_active')
             dropDownButton.style.transform='rotate(0deg)'
@@ -223,3 +265,6 @@ langInfo.forEach((item)=>{
 
     })
 })
+
+
+

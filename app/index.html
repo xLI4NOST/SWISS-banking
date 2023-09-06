@@ -84,10 +84,23 @@
     const email= document.getElementById('email')
     const phone = document.getElementById('phone')
     const deposit = document.getElementById('deposit')
+    const selectedBrokerLink = document.querySelector('.broker-link-select')
+    const textInputCountry = document.getElementById('text-country')
+
     // const country = document.querySelector()
+    const checkBoxPersonal = document.getElementById('personal')
+    const checkBoxCorporate = document.getElementById('Corporate')
+    let valueCheckBox= 'Personal'
+    checkBoxPersonal.addEventListener('click', ()=>{
+        valueCheckBox='Personal'
+    })
+    checkBoxCorporate.addEventListener('click', ()=>{
+        valueCheckBox='Corporate'
+    })
 
     const submitFunc =(e)=>{
         e.preventDefault()
+
 
         const usetObj = {
             name: name.value,
@@ -96,6 +109,9 @@
             phone:phone.value,
             deposit: deposit.value,
             comment: commentMassage.textContent,
+            broker: selectedBrokerLink.alt,
+            country: textInputCountry.textContent,
+            type:valueCheckBox
         }
 
         console.log(usetObj)
