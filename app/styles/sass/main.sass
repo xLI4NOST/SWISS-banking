@@ -818,16 +818,6 @@ tr:nth-child(2n)
         align-items: center
         cursor: pointer
       label
-        input[type='checkbox']:checked + .checkbox-custom :before
-          content: ""
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
-          width: 12px
-          height: 12px
-          background-color: red
-          border-radius: 50%
       p
         margin-bottom: 5px
         color: #6C6C6C
@@ -914,6 +904,8 @@ tr:nth-child(2n)
     justify-content: start !important
     gap: 10px
     input
+      position: relative
+      display: inline-block
       border-color: #AAA
       background-color: black
       stroke-width: 1px
@@ -923,21 +915,27 @@ tr:nth-child(2n)
       border-color: #AAA
 
     input::before
-      border-color: #AAA
+      position: absolute
+      top: 0
+      left: -2px
       content: ''
-      width: 20px
-      height: 20px
-      background-color: #FFF
-      border-radius: 50%
+      margin: 0
       display: block
+      width: 25px
+      height: 25px
+      background-color: #FFFFFF
+      border-radius: 12px
+      border: 1px solid #AAA
 
     input:checked::after
+      top: 5px
+      left: 3px
+      position: absolute
       display: block
       border-radius: 50px
-      transform: translate(5px, -15px)
       content: ''
-      width: 10px
-      height: 10px
+      width: 15px
+      height: 15px
       background-color: #ED2024
 
 
@@ -1003,7 +1001,6 @@ tr:nth-child(2n)
   .popup_reg_form
     margin: 0 !important
     width: 100% !important
-    height: 100% !important
   .popup_reg-form_container
     gap: 30px !important
   .deposit
