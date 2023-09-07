@@ -86,6 +86,8 @@
     const deposit = document.getElementById('deposit')
     const selectedBrokerLink = document.querySelector('.broker-link-select')
     const textInputCountry = document.getElementById('text-country')
+    const popupReg =document.querySelector('.popup_reg')
+    const successPopup= document.querySelector('.success-popup')
 
     // const country = document.querySelector()
     const checkBoxPersonal = document.getElementById('personal')
@@ -97,7 +99,11 @@
     checkBoxCorporate.addEventListener('click', ()=>{
         valueCheckBox='Corporate'
     })
-
+    const successPopupClose =()=>{
+        setTimeout(()=>{
+            successPopup.style.display='none'
+        }, 3000)
+    }
     const submitFunc =(e)=>{
         e.preventDefault()
 
@@ -114,8 +120,19 @@
             type:valueCheckBox
         }
 
-        console.log(usetObj)
+        name.value=''
+        lastName.value=''
+        email.value=''
+        phone.value=''
+        deposit.value=''
+        commentMassage.value=''
 
+        popupReg.style.display='none'
+
+        console.log(usetObj)
+        successPopup.style.display='flex'
+        successPopupClose()
+        document.body.style.overflow='scroll'
     }
 
     popupForm.addEventListener('submit', submitFunc)
