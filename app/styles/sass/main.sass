@@ -259,7 +259,7 @@
   display: none
   gap: 10px
   padding: 4px
-  top: 30px
+  top: 40px
   width: 120%
   min-height: 30px
   position: absolute
@@ -272,6 +272,25 @@
 
 .lang-result_active
   display: block
+
+.lang-info
+  margin-top: 7px
+  padding: 0 !important
+  display: flex
+  gap: 5px
+  flex-direction: row
+.lang-info:nth-child(1)
+  margin-top: 3px
+.lang-word-result
+  margin-top: 10px !important
+.lang-word-result:nth-child(1n)
+  margin-top: 0 !important
+
+@media screen and (max-width: 1258px)
+  .lang-result
+    top: 35px
+  .select-lang
+    padding: 0 !important
 
 .lang
   cursor: pointer
@@ -296,6 +315,8 @@
 
 
 @media screen and (max-width: 1109px)
+  .lang-result
+    top: 30px
   .header_nav-bar
     a
       font-size: 11px
@@ -305,7 +326,10 @@
 .lang-word
   cursor: pointer
 
+
 @media screen and (max-width: 999px)
+  .lang-variant
+    margin: 0 auto
   .dropdown-icon-red
     transform: translateY(10px)
     display: block !important
