@@ -87,7 +87,7 @@
     const selectedBrokerLink = document.querySelector('.broker-link-select')
     const textInputCountry = document.getElementById('text-country')
     const popupReg =document.querySelector('.popup_reg')
-    const successPopup= document.querySelector('.success-popup')
+    const successPopup= document.querySelector('.success-popup_back')
 
     // const country = document.querySelector()
     const checkBoxPersonal = document.getElementById('personal')
@@ -134,7 +134,9 @@
         successPopupClose()
         document.body.style.overflow='scroll'
     }
-
+    successPopup.addEventListener('click', ()=>{
+        successPopup.style.display='none'
+    })
     popupForm.addEventListener('submit', submitFunc)
 </script>
 
