@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupReg = document.querySelector('.popup_reg')
     const selectArrow= document.querySelector('.arrow-select')
     const searchSelectBlock= document.getElementById('select-input_result')
-    const selectResult = document.querySelectorAll('.select-result')
+    const countries = document.querySelectorAll('.select-result')
     const brokerSelectArrow = document.querySelector('.broker-select-input')
     const brokerSelectResult = document.querySelector('.broker-select-result')
     const brokerLinks = document.querySelectorAll('.broker-link')
@@ -164,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const textInputCountry = document.getElementById('text-country')
 
-    for (let resultButton of selectResult){
+
+    for (let resultButton of countries){
         resultButton.addEventListener('click', (e)=> {
             e.stopPropagation()
             textInputCountry.textContent=resultButton.textContent
@@ -174,6 +175,25 @@ const textInputCountry = document.getElementById('text-country')
 
         })
     }
+    
+    textInputCountry.addEventListener('input', ()=>{
+        const searchText = textInputCountry.textContent.toLowerCase();
+        for (let i = 0; i < countries.length; i++) {
+            const countryName = countries[i].textContent.toLowerCase();
+            if (countryName.startsWith(searchText)) {
+                countries[i].style.display = "block";
+            } else {
+                countries[i].style.display = "none";
+            }
+        }
+    })
+
+
+
+    
+
+
+
 
     for (let brokerLink of brokerLinks){
         brokerLink.addEventListener('click', (e)=> {
@@ -265,6 +285,9 @@ langInfo.forEach((item)=>{
 
     })
 })
+
+
+
 
 
 

@@ -267,6 +267,7 @@
     gap: 7px
     cursor: pointer
     display: flex
+    margin-top: 7px
 
 .lang-result_active
   display: block
@@ -904,6 +905,7 @@ tr:nth-child(2n)
     justify-content: start !important
     gap: 10px
     input
+      cursor: pointer
       position: relative
       display: inline-block
       border-color: #AAA
@@ -1015,8 +1017,10 @@ tr:nth-child(2n)
       width: auto !important
 
 @media screen and (max-width: 521px)
-  .country-select
-    margin-bottom: 0 !important
+  // .country-select
+  //   margin-bottom: 0 !important
+  .popup_reg form
+    height: unset
   .popup_reg-form_container-input-box
     align-self: end
 @media screen and (max-width: 480px)
@@ -1029,15 +1033,23 @@ tr:nth-child(2n)
 
 @media screen and (max-width: 420px)
   .popup_reg-form_container-input-box
-    width: 150px !important
+    // width: 150px !important
+    width: 100% !important
   .phone-input
-    max-width: 150px
+    // max-width: 150px
+    width: 100%
   .popup_reg-form_container
     gap: 15px !important
+    flex-direction: column !important
   .deposit
     gap: 15px
   .popup_reg_form
     padding: 50px 20px !important
+  .deposit
+    flex-direction: column !important
+    margin-bottom: 0px !important
+  .comment-box
+    margin-top: 0px !important
 
 @media screen and (max-width: 350px)
   .popup_reg-form_container-input-box

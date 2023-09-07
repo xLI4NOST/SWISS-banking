@@ -19,48 +19,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 </head>
 
 <body>
 <div class="popup_reg">
     <form class="popup_reg_form">
-        <h2>Open an Account</h2>
-        <img alt="close-icon" id="popup_reg-close" src="../images/svg%20/popupclose.svg">
-        <div>
-             <span>
+        <h2 class="popup_reg-title">Open an Account</h2>
+        <img class="popup_reg-close-icon" alt="close-icon" id="popup_reg-close" src="../images/svg%20/popupclose.svg">
+        <div class="popup_reg-form_container">
+             <span class="popup_reg-form_container-input-box">
                 <p>First name:</p>
                 <input id="First-name" name="First-name" type="text">
         </span>
-            <span>
+            <span class="popup_reg-form_container-input-box">
                 <p>Last name:</p>
                 <input id="Last-name" name="Last-name" type="text">
         </span>
 
         </div>
 
-        <div>
-             <span>
+        <div class="popup_reg-form_container">
+             <span class="popup_reg-form_container-input-box">
                 <p>Email:</p>
                 <input id="email"  name="email" type="email">
         </span>
-            <span>
+            <span class="phone-input popup_reg_form_container-input-box" >
                 <p>Phone:</p>
-                <input id="phone" name="phone" type="tel">
+                <input id="phone" class="phone-input" name="phone" type="tel">
         </span>
 
         </div>
 
         <div class="country-select">
-
              <span>
                 <p>Country of residence:</p>
                  <div class="country-select-input">
-                        <img class="arrow-select" src="../images/svg%20/arrow-select.svg" alt="arrow">
-                     <span class="select-input_result" id="select-input_result">
+                     <div id="text-country" contenteditable="true">
+
+                     </div>
+                        <img class="arrow-select" contenteditable="false" src="../images/svg%20/arrow-select.svg" alt="arrow">
+                     <span contenteditable="false" class="select-input_result" id="select-input_result">
                          <p class="select-result">Russia</p>
                          <p class="select-result">Poland</p>
                          <p class="select-result">Germany</p>
+                         <p class="select-result">Swiiz</p>
+                         <p class="select-result">Pop</p>
+                         <p class="select-result">Top</p>
+                         <p class="select-result">Top2</p>
+                         <p class="select-result">TOOOOOT</p>
                      </span>
                  </div>
              </span>
@@ -84,20 +91,20 @@
         </div>
 
         <div class="deposit">
-             <span>
+             <span class="popup_reg-form_container-input-box">
                 <p>What´s your deposit amount?</p>
                 <input name="deposit" id="deposit" type="text">
         </span>
-            <span>
+            <span class="popup_reg-form_container-input-box">
                 <p>Broker:</p>
-                <div class="country-select">
+                <div class="country-select" >
                          <div class="country-select-input broker-select-input">
-                                <img src="../images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                                <img src="../images/svg%20/interactiveBrokers.svg" class="broker-link-select" alt="broker">
                                 <img  class="arrow-select broker-select" src="images/svg%20/arrow-select.svg" alt="arrow">
                              <span class="select-input_result broker-select-result">
                                     <img src="../images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
-                                 <img src="../images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
-                                 <img src="../images/svg%20/interactiveBrokers.svg" class="broker-link" alt="broker">
+                                 <img src="../images/svg%20/tradeStation.svg" class="broker-link" alt="broker">
+                                 <img src="../images/svg%20/tickmill.svg" class="broker-link" alt="broker">
                              </span>
                          </div>
                 </div>
@@ -143,6 +150,7 @@
                 <span>
                     <a class="img-href" href="tel:++412123456789" ><img src="../images/svg%20/call-phone.svg"></a>
                     <a href="tel:++412123456789">+41 (2)123456789</a>
+
                 </span>
 
                 <span>
@@ -180,8 +188,31 @@
                 <a class="header_link" href="#">Fin-Techs</a>
                 <a class="header_link" href="#">Banks in Asia</a>
                 <a class="header_link" href="#">Offshore-Banks</a>
-                <a class="header_link" href="#">Asset Manager</a>
+                <a class="header_link" href="#">Asset Manager </a>
             </nav>
+
+            <div class="select-lang">
+                <img class="lang lang-button" src="../images/svg%20/flag.svg" alt="country">
+                <p class="lang-word">Deutsch</p>
+
+                <img class="dropdown-icon" src="../images/svg%20/dropdown.svg" alt="country">
+                <img class="dropdown-icon dropdown-icon-red" src="../images/svg%20/dropDownRed.svg" alt="country">
+                <div class="lang-result">
+                    <span class="lang-info">
+                        <img class="lang-variant"  src="../images/svg%20/flag.svg" alt="lang">
+                        <p class="lang-word">Deutsch</p>
+                    </span>
+                    <span class="lang-info">
+                        <img class="lang-variant"  src="../images/svg%20/flag.svg" alt="lang">
+                        <p class="lang-word">Deutsch2</p>
+                    </span>
+                    <span class="lang-info">
+                        <img class="lang-variant"  src="../images/svg%20/flag.svg" alt="lang">
+                        <p class="lang-word">Deutsch3</p>
+                    </span>
+
+                </div>
+            </div>
 
              <form id="form-header">
                  
@@ -209,8 +240,89 @@
 
 
     </header>
+
 </div>
 <div class="main">
+
+    <table class="table">
+    <tr class="table-heading">
+        <th class="broker">Broker</th>
+        <th class="second-heading">
+                    <span>
+                        <img src="../images/svg%20/star.svg" alt="brokerLogo">
+                        <img src="../images/svg%20/Empfehlung.svg" alt="brokerLogo">
+                    </span>
+            <img class="bottom-image" src="../images/svg%20/interactiveBrokers.svg" alt="brokerLogo">
+        </th>
+        <th><img src="../images/svg%20/tradeStation.svg" alt="brokerLogo"></th>
+        <th><img src="../images/svg%20/tickmill.svg" alt="brokerLogo"></th>
+        <th><img src="../images/svg%20/dukascopy.svg" alt="brokerLogo"></th>
+    </tr>
+    <tr class="left_menu">
+        <td>Jurisdiction</td>
+        <th>US, HK, HU</th>
+        <th>US</th>
+        <th>US, HK, HU</th>
+        <th>US, HK, HU</th>
+    </tr>
+    <tr>
+        <td>Platforms</td>
+        <th>MT5, MT4</th>
+        <th>MT5, MT4</th>
+        <th>MT5, MT4</th>
+        <th>MT5, MT4</th>
+    </tr>
+    <tr>
+        <td>Account opening fee</td>
+        <th>100</th>
+        <th>100</th>
+        <th>100</th>
+        <th>100</th>
+    </tr>
+    <tr>
+        <td>Products</td>
+        <th>Stocks, Options, Futures, CFD</th>
+        <th>Stocks, Options, Futures, CFD</th>
+        <th>Stocks, Options, Futures, CFD</th>
+        <th>Stocks, Options, Futures, CFD</th>
+    </tr>
+    <tr>
+        <td>Leverage</td>
+        <th>2000</th>
+        <th>2000</th>
+        <th>2000</th>
+        <th>2000</th>
+    </tr>
+    <tr>
+        <td>Fees</td>
+        <th>15</th>
+        <th>15</th>
+        <th>15</th>
+        <th>15</th>
+    </tr>
+    <tr>
+        <td>Minimun deposit</td>
+        <th>500</th>
+        <th>500</th>
+        <th>500</th>
+        <th>500</th>
+    </tr>
+    <tr>
+        <td>Security</td>
+        <th>High</th>
+        <th>High</th>
+        <th>High</th>
+        <th>High</th>
+    </tr>
+    <tr>
+        <td></td>
+        <th><button>Open an Account</button></th>
+        <th><button>Open an Account</button></th>
+        <th><button>Open an Account</button></th>
+        <th><button>Open an Account</button></th>
+    </tr>
+</table>
+
 
 
 
@@ -286,10 +398,62 @@
         Contact Us
     </button>
 
+<script>
+    const popupForm = document.querySelector('.popup_reg_form')
+    const commentMassage = document.querySelector('.comment_massage')
+    const name= document.getElementById('First-name')
+    const lastName = document.getElementById('Last-name')
+    const email= document.getElementById('email')
+    const phone = document.getElementById('phone')
+    const deposit = document.getElementById('deposit')
+    const selectedBrokerLink = document.querySelector('.broker-link-select')
+    const textInputCountry = document.getElementById('text-country')
+
+    // const country = document.querySelector()
+    const checkBoxPersonal = document.getElementById('personal')
+    const checkBoxCorporate = document.getElementById('Corporate')
+    let valueCheckBox= 'Personal'
+    checkBoxPersonal.addEventListener('click', ()=>{
+        valueCheckBox='Personal'
+    })
+    checkBoxCorporate.addEventListener('click', ()=>{
+        valueCheckBox='Corporate'
+    })
+
+    const submitFunc =(e)=>{
+        e.preventDefault()
+
+
+        const usetObj = {
+            name: name.value,
+            lastName: lastName.value,
+            email: email.value,
+            phone:phone.value,
+            deposit: deposit.value,
+            comment: commentMassage.textContent,
+            broker: selectedBrokerLink.alt,
+            country: textInputCountry.textContent,
+            type:valueCheckBox
+        }
+
+        console.log(usetObj)
+
+    }
+
+    popupForm.addEventListener('submit', submitFunc)
+</script>
+
 </section>
 
 
 <script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script>
+    const input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+    });
+</script>
 </div>
 </body>
 <footer class="footer">
