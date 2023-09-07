@@ -199,6 +199,7 @@ const textInputCountry = document.getElementById('text-country')
         brokerLink.addEventListener('click', (e)=> {
             e.stopPropagation()
             selectedBrokerLink.src= brokerLink.src
+            selectedBrokerLink.alt= brokerLink.alt
             setTimeout( ()=>{
                 brokerSelectResult.classList.remove('select-input_result-block-active')
             }, 100)
