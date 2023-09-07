@@ -215,7 +215,7 @@ const textInputCountry = document.getElementById('text-country')
 
     //popup//
 const popupReg= document.querySelector('.popup_reg')
-const popUpButton = document.querySelector('.open-popup-reg')
+const popUpButton = document.querySelectorAll('.open-popup-reg')
 const header= document.querySelector('.header')
 
 const openPopup =()=>{
@@ -225,7 +225,9 @@ const openPopup =()=>{
 
 }
 
-popUpButton.addEventListener('click', openPopup )
+popUpButton.forEach(element => {
+    element.addEventListener('click', openPopup )
+});
 
 
 
