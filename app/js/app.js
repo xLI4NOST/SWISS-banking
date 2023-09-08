@@ -291,6 +291,55 @@ langInfo.forEach((item)=>{
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    let table = document.querySelector('.table');
+    let overlay = document.querySelector('.main-overlay-hover');
+    let currentTh = null;
 
+    const clearPreviousHover = () => {
+        if (currentTh) {
+            currentTh.classList.remove('hovered-column');
+
+            let columnIndex = Array.from(currentTh.parentElement.children).indexOf(currentTh);
+            for (let row of table.rows) {
+                row.cells[columnIndex].classList.remove('hovered-column');
+            }
+        }
+    };
+
+    table.addEventListener('mouseover', function(e) {
+        let target = e.target;
+        while (target && target.nodeName.toLowerCase() !== 'th') {
+            target = target.parentElement;
+        }
+
+        if (target && target !== currentTh) {
+            clearPreviousHover();
+
+            currentTh = target;
+            currentTh.classList.add('hovered-column');
+            
+            let columnIndex = Array.from(target.parentElement.children).indexOf(target);
+            for (let row of table.rows) {
+                row.cells[columnIndex].classList.add('hovered-column');
+            }
+
+            let firstCell = table.querySelector('tr').children[columnIndex];
+            overlay.style.visibility = 'visible';
+            overlay.style.opacity = '1';
+            overlay.style.left = firstCell.offsetLeft + 'px';
+            overlay.style.width = firstCell.offsetWidth + 'px';
+        }
+    });
+
+    table.addEventListener('mouseout', function(e) {
+        if (e.target.tagName.toLowerCase() === 'th' && !currentTh.contains(e.relatedTarget)) {
+            clearPreviousHover();
+            overlay.style.opacity = '0';
+            overlay.style.visibility = 'hidden';
+            currentTh = null;
+        }
+    });
+});
 
 

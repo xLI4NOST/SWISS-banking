@@ -434,14 +434,35 @@
     gap: 4px
 
 .main
+  position: relative
   width: 100%
   background-color: #F5F5F5
   overflow: scroll
   padding-top: 100px
   padding-bottom: 50px
-.table
+
+.container
+  position: relative
   width: 1300px
   margin: 0 auto
+
+.table
+  width: 100%
+
+.main-overlay-hover
+  position: absolute
+  bottom: 0
+  top: -20px
+  z-index: 1
+  background: rgba(255, 255, 255, 1)
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15)
+  visibility: hidden
+  opacity: 0
+  transition: 0.2s all ease-in-out
+
+.table th
+  position: relative
+  z-index: 9
 
 .second-heading
   display: flex
