@@ -312,25 +312,33 @@ document.addEventListener('DOMContentLoaded', function() {
         while (target && target.nodeName.toLowerCase() !== 'th') {
             target = target.parentElement;
         }
-
+    
         if (target && target !== currentTh) {
             clearPreviousHover();
-
-            currentTh = target;
-            currentTh.classList.add('hovered-column');
-            
-            let columnIndex = Array.from(target.parentElement.children).indexOf(target);
-            for (let row of table.rows) {
-                row.cells[columnIndex].classList.add('hovered-column');
+    
+            // Добавляем проверку, является ли target элементом с классом 'broker'
+            if (!target.classList.contains('broker')) {
+                currentTh = target;
+                currentTh.classList.add('hovered-column');
+                
+                let columnIndex = Array.from(target.parentElement.children).indexOf(target);
+                for (let row of table.rows) {
+                    row.cells[columnIndex].classList.add('hovered-column');
+                }
+    
+                let firstCell = table.querySelector('tr').children[columnIndex];
+                overlay.style.visibility = 'visible';
+                overlay.style.opacity = '1';
+                overlay.style.left = firstCell.offsetLeft + 'px';
+                overlay.style.width = firstCell.offsetWidth + 'px';
+            } else {
+                // Если элемент имеет класс 'broker', overlay не отображается
+                overlay.style.visibility = 'hidden';
+                overlay.style.opacity = '0';
             }
-
-            let firstCell = table.querySelector('tr').children[columnIndex];
-            overlay.style.visibility = 'visible';
-            overlay.style.opacity = '1';
-            overlay.style.left = firstCell.offsetLeft + 'px';
-            overlay.style.width = firstCell.offsetWidth + 'px';
         }
     });
+    
 
     table.addEventListener('mouseout', function(e) {
         if (e.target.tagName.toLowerCase() === 'th' && !currentTh.contains(e.relatedTarget)) {
